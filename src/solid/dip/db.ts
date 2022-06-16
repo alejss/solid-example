@@ -1,3 +1,4 @@
+import QAData from './data/db-prod.json'
 export class LocalDB {
     async getUsers() {
         return [
@@ -17,5 +18,11 @@ export class LocalDB {
                 "job": "UX"
             }
         ]
+    }
+}
+
+export class QADB {
+    async getUsers() {
+        return QAData
     }
 }
