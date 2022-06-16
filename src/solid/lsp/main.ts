@@ -1,26 +1,30 @@
-import { Chile, Argentina, Guatemala, Venezuela } from './class-country';
+import { Country, Chile, Argentina, Guatemala, Venezuela, Mexico } from './class-country';
 
 
 (() => {
 
-    const printPopulationCountries = (countries: (Chile | Argentina | Guatemala | Venezuela)[]) => {
+    const printPopulationCountries = (countries: Country[]) => {
 
         for (const country of countries) {
 
             if (country instanceof Chile) {
-                console.log('Chile', country.getNumberOfChilePopulation())
+                console.log('Chile', country.getNumberPopulation())
                 continue;
             }
             if (country instanceof Argentina) {
-                console.log('Argentina', country.getNumberOfArgentinaPopulation())
+                console.log('Argentina', country.getNumberPopulation())
                 continue;
             }
             if (country instanceof Guatemala) {
-                console.log('Guatemala', country.getNumberOfGuatemalaPopulation())
+                console.log('Guatemala', country.getNumberPopulation())
                 continue;
             }
             if (country instanceof Venezuela) {
-                console.log('Venezuela', country.getNumberOfVenezuelaPopulation())
+                console.log('Venezuela', country.getNumberPopulation())
+                continue;
+            }
+            if (country instanceof Mexico) {
+                console.log('Mexico', country.getNumberPopulation())
                 continue;
             }
 
@@ -32,6 +36,7 @@ import { Chile, Argentina, Guatemala, Venezuela } from './class-country';
         new Argentina(45),
         new Guatemala(16),
         new Venezuela(28),
+        new Mexico(50)
     ];
 
     printPopulationCountries(countries);

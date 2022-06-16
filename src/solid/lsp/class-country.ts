@@ -1,35 +1,59 @@
-export class Chile {
+export abstract class Country {
+    abstract getNumberPopulation(): number
+}
 
-    constructor(private numberOfPopulation: number) { }
+export class Chile extends Country {
 
-    getNumberOfChilePopulation() {
-        return this.numberOfPopulation;
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
+
+    getNumberPopulation() {
+        return this.numberOfPopulation
+    }
+
+}
+
+export class Argentina extends Country {
+
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
+
+    getNumberPopulation() {
+        return this.numberOfPopulation
     }
 }
 
-export class Argentina {
+export class Guatemala extends Country {
 
-    constructor(private numberOfPopulation: number) { }
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
 
-    getNumberOfArgentinaPopulation() {
-        return this.numberOfPopulation;
+    getNumberPopulation() {
+        return this.numberOfPopulation
     }
 }
 
-export class Guatemala {
+export class Venezuela extends Country {
 
-    constructor(private numberOfPopulation: number) { }
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
 
-    getNumberOfGuatemalaPopulation() {
-        return this.numberOfPopulation;
+    getNumberPopulation() {
+        return this.numberOfPopulation
     }
 }
 
-export class Venezuela {
+export class Mexico extends Country {
 
-    constructor(private numberOfPopulation: number) { }
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
 
-    getNumberOfVenezuelaPopulation() {
-        return this.numberOfPopulation;
+    getNumberPopulation() {
+        return this.numberOfPopulation
     }
 }
