@@ -5,20 +5,13 @@
         name: string;
     }
 
-    class ProductCart {
-
-        checkStock(id: number) {
+    class Stock {
+        check(id: number) {
             console.log('Product Units: ',{ id, stock: 20 });
         }
-    
-        getProduct( id: number ) {
-            console.log('Product: ',{ id, name: 'Apple' });
-        }
-    
-        saveProduct( product: Product ) {
-            console.log('Save product in DB', product );
-        }
-    
+    }
+
+    class Cart {
         onAddToCart( productId: number ) {
             console.log(`Add product ID: ${productId}`)
         }
@@ -26,29 +19,35 @@
         onDeleteToCart(productId: number) {
             console.log(`Delete product ID: ${productId}`)
         }
+    }
 
-        notifyCustomers() {
+    class Contactability {
+        notify() {
             console.log('Send email product discount');
         }
+    }
+
+    class ProductCart {
     
+        getProduct( id: number ) {
+            console.log('Product: ',{ id, name: 'Apple' });
+        }
+    
+        saveProduct( product: Product ) {
+            console.log('Save product in DB', product );
+        }    
     }
     
-
-
+    const stock = new Stock();
     const productCart = new ProductCart();
+    const cart = new Cart()
+    const contactability = new Contactability()
 
-    productCart.checkStock(1);
+    stock.check(1);
     productCart.getProduct(10);
     productCart.saveProduct({ id: 10, name: 'Chocolate' });
-    productCart.notifyCustomers();
-    productCart.onAddToCart(10);
-    productCart.onDeleteToCart(13);
-
-
-
-
-
-
-
+    contactability.notify();
+    cart.onAddToCart(10);
+    cart.onDeleteToCart(13);
 
 })();
