@@ -1,11 +1,15 @@
 import { AllService, TypePokemon, PostService } from './service';
+import HttpClient from './service-http';
 
 (async () => {
-    const todoService = new AllService();
-    const postService = new PostService();
-    const typePokemon = new TypePokemon();
 
-    const allPokemons = await todoService.getAllItems();
+    const httpClient = new HttpClient()
+
+    const allService = new AllService(httpClient);
+    const postService = new PostService(httpClient);
+    const typePokemon = new TypePokemon(httpClient);
+
+    const allPokemons = await allService.getAllItems();
     const posts = await postService.getPosts();
     const getType = await typePokemon.getForType();
     
