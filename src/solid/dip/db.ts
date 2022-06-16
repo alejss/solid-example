@@ -30,3 +30,10 @@ export class QADB implements UserProvider{
         return QAData
     }
 }
+
+export class ProdDB implements UserProvider {
+    async getUsers(): Promise<User[]>{
+        const resp = await fetch('https://pokeapi.co/api/v2/type/3');
+        return await resp.json();
+    }
+}

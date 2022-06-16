@@ -1,9 +1,9 @@
 import { UserService } from "./repository"
-import { QADB } from './db'
+import { ProdDB } from './db'
 
 (async () => {
 
-    const userProvider = new QADB()
+    const userProvider = new ProdDB()
     const userService = new UserService(userProvider);
     const users = await userService.getUsers();
 
