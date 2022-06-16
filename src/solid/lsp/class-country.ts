@@ -57,3 +57,14 @@ export class Mexico extends Country {
         return this.numberOfPopulation
     }
 }
+
+export class Honduras extends Country {
+
+    constructor(private numberOfPopulation: number) {
+        super();
+    }
+
+    getNumberPopulation() {
+        return this.numberOfPopulation
+    }
+}
