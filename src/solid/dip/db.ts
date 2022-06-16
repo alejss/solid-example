@@ -1,5 +1,9 @@
 import QAData from './data/db-prod.json'
-export class LocalDB {
+import User from './user-interface'
+export abstract class UserProvider {
+    abstract getUsers(): Promise<User[]>
+}
+export class LocalDB implements UserProvider{
     async getUsers() {
         return [
             {
@@ -21,7 +25,7 @@ export class LocalDB {
     }
 }
 
-export class QADB {
+export class QADB implements UserProvider{
     async getUsers() {
         return QAData
     }

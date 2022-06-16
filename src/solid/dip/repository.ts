@@ -1,15 +1,10 @@
-import { LocalDB, QADB } from './db'
-
-export interface User {
-    id: number,
-    name: string,
-    job: string
-}
+import { UserProvider } from './db'
+import User from './user-interface'
 
 export class UserService {
     private users: User[] = []
 
-    constructor(private userProvider: QADB) { }
+    constructor(private userProvider: UserProvider) { }
 
     async getUsers() {
         this.users = await this.userProvider.getUsers();
